@@ -1,0 +1,2 @@
+# islakonek
+ IslaKonek is a straightforward yet powerful contact management system meticulously crafted using the PHP Laravel framework along with modern CSS frameworks. Designed to streamline the process of gathering and managing personal information of the island's residents and detailed data about the island itself, IslaKonek serves as an essential tool for local administration and community management.
