@@ -33,7 +33,7 @@
                     </x-bladewind::button>
                 </div>
             </div>
-            <div class="w-full overflow-x-auto">
+            <div class="w-full overflow-x-scroll">
                 <table class="min-w-full divide-y divide-gray-200 mx-auto">
                     <thead class="bg-gray-50 dark:bg-gray-700">
                         <tr>

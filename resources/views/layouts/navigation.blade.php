@@ -20,9 +20,14 @@
                         {{ __('Contacts') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('group.index')" :active="request()->routeIs('group.index')">
-                        {{ __('Groups') }}
+
+                    <x-nav-link :href="route('island.index')" :active="request()->routeIs('island.index') || request()->routeIs('island.create')">
+                        {{ __('Islands') }}
                     </x-nav-link>
+
+
+
+
 
                 </div>
             </div>

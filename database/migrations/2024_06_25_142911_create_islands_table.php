@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('location');
-            $table->string('description');
-            $table->string('size');
-            $table->softDeletes();
+            $table->string('area');
+            $table->string('total_population');
+            $table->string('islandImage')->nullable();
             $table->timestamps();
         });
     }

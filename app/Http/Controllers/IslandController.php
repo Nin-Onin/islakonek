@@ -12,7 +12,8 @@ class IslandController extends Controller
      */
     public function index()
     {
-        //
+        $islands = Island::all();
+        return view('pages.island.index', compact('islands'));
     }
 
     /**
@@ -20,7 +21,7 @@ class IslandController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.island.create');
     }
 
     /**
@@ -28,7 +29,17 @@ class IslandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'area' => 'required',
+            'total_population' => 'required',
+            'islandImage' => 'nullable',
+        ]);
+
+        Island::create($data);
+
+        return redirect(route('island.index'));
     }
 
     /**
