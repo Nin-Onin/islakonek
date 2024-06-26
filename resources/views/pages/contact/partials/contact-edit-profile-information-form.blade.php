@@ -32,12 +32,13 @@
                     <x-input-label for="sex" :value="__('Sex')" class="w-20" />
                     <select id="sex" name="sex" value="{{ $contact->sex }}"
                         class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
-                        style="background-color: #111827; color: #fffff;">
-                        <option value="" disabled selected>Enter Sex</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
+                        style="background-color: #111827; color: #ffffff;">
+                        <option value="" disabled {{ $contact->sex == '' ? 'selected' : '' }}>Enter Sex</option>
+                        <option value="male" {{ $contact->sex == 'male' ? 'selected' : '' }}>Male</option>
+                        <option value="female" {{ $contact->sex == 'female' ? 'selected' : '' }}>Female</option>
+                        <option value="other" {{ $contact->sex == 'other' ? 'selected' : '' }}>Other</option>
                     </select>
+
                 </div>
             </div>
         </div>
@@ -49,34 +50,19 @@
             </div>
 
             <div class="w-full">
-                <x-input-label for="civil_status" :value="__('Civil Status')" />
-                <x-text-input id="civil_status" name="civil_status" type="text" value="{{ $contact->civil_status }}"
-                    placeholder="Enter Civil Status" class="mt-1 block w-full" required autofocus autocomplete="off" />
-            </div>
-        </div>
-
-        <div>
-            <x-input-label for="date_of_birth" :value="__('Date of Birth')" />
-            <x-text-input id="date_of_birth" name="date_of_birth" type="text" value="{{ $contact->date_of_birth }}"
-                placeholder="xxxx - xx - xx" class="mt-1 block w-full" required autofocus autocomplete="off" />
-        </div>
-
-
-
-        <div class="flex flex-row">
-
-            <div class="w-full">
                 <x-input-label for="location" :value="__('Location')" />
                 <x-text-input id="location" name="location" type="text" value="{{ $contact->location }}"
                     placeholder="Enter Location" class="mt-1 block w-full" required autofocus autocomplete="off" />
             </div>
 
-            <div class="w-full">
-                <x-input-label for="phone_number" :value="__('Phone Number')" />
-                <x-text-input id="phone_number" name="phone_number" type="text" value="{{ $contact->phone_number }}"
-                    placeholder="+63 000-0000-000" class="mt-1 block w-full" required autofocus autocomplete="off" />
-            </div>
+
         </div>
+
+
+
+
+
+
 
         {{-- Parent Div --}}
         <div class="flex items-center gap-4">

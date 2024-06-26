@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('islands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
             $table->string('area');
             $table->string('total_population');
             $table->string('islandImage')->nullable();

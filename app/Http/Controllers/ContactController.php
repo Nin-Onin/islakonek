@@ -35,10 +35,7 @@ class ContactController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'religion' => 'required',
-            'civil_status' => 'required',
-            'date_of_birth' => 'required',
             'location' => 'required',
-            'phone_number' => 'nullable'
         ]);
 
         $newContact = Contact::create($data);
@@ -62,15 +59,12 @@ class ContactController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'religion' => 'required',
-            'civil_status' => 'required',
-            'date_of_birth' => 'required',
             'location' => 'required',
-            'phone_number' => 'nullable'
         ]);
 
         $contact->update($data);
 
-        return redirect(route('contact.index'))->with('success', 'Product Updated Succesffully');
+        return redirect(route('contact.index'))->with('success', 'Contact Updated Succesffully');
     }
 
     /**
@@ -79,6 +73,6 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        return redirect(route('contact.index'))->with('success', 'Product deleted Succesffully');
+        return redirect(route('contact.index'))->with('success', 'Contact deleted Succesffully');
     }
 }

@@ -31,13 +31,12 @@ class IslandController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'location' => 'required',
             'area' => 'required',
             'total_population' => 'required',
             'islandImage' => 'nullable',
         ]);
 
-        Island::create($data);
+        $newIsland = Island::create($data);
 
         return redirect(route('island.index'));
     }
@@ -45,17 +44,13 @@ class IslandController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Island $island)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Island $island)
     {
-        //
+        return view('pages.island.edit', compact('island'));
     }
 
     /**
@@ -63,7 +58,16 @@ class IslandController extends Controller
      */
     public function update(Request $request, Island $island)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'area' => 'required',
+            'total_population' => 'required',
+            'islandImage' => 'required',
+        ]);
+
+        $island->update($data);
+
+        return redirect(route('island.index'))->with('success', 'Island Updated Succesffully');
     }
 
     /**
@@ -71,6 +75,7 @@ class IslandController extends Controller
      */
     public function destroy(Island $island)
     {
-        //
+        $island->delete();
+        return redirect(route('island.index'))->with('success', 'Island deleted Succesffully');
     }
 }

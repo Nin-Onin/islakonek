@@ -49,34 +49,14 @@
             </div>
 
             <div class="w-full">
-                <x-input-label for="civil_status" :value="__('Civil Status')" />
-                <x-text-input id="civil_status" name="civil_status" type="text" placeholder="Enter Civil Status"
-                    class="mt-1 block w-full" required autofocus autocomplete="off" />
-            </div>
-        </div>
-
-        <div>
-            <x-input-label for="date_of_birth" :value="__('Date of Birth')" />
-            <x-text-input id="date_of_birth" name="date_of_birth" type="text" placeholder="xxxx - xx - xx"
-                class="mt-1 block w-full" required autofocus autocomplete="off" />
-        </div>
-
-
-
-        <div class="flex flex-row">
-
-            <div class="w-full">
                 <x-input-label for="location" :value="__('Location')" />
                 <x-text-input id="location" name="location" type="text" placeholder="Enter Location"
                     class="mt-1 block w-full" required autofocus autocomplete="off" />
             </div>
 
-            <div class="w-full">
-                <x-input-label for="phone_number" :value="__('Phone Number')" />
-                <x-text-input id="phone_number" name="phone_number" type="text" placeholder="+63 000-0000-000"
-                    class="mt-1 block w-full" required autofocus autocomplete="off" />
-            </div>
         </div>
+
+
 
         {{-- Parent Div --}}
         <div class="flex items-center gap-4">

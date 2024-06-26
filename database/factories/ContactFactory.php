@@ -19,10 +19,8 @@ class ContactFactory extends Factory
             'age' => $this->faker->numberBetween(18, 65),
             'sex' => $this->faker->word,
             'religion' => $this->faker->word,
-            'civil_status' => $this->faker->word, // Using a word generator for 'civil_status'
-            'date_of_birth' => $this->faker->date(),
             'location' => $this->faker->address,
-            'phone_number' => $this->faker->phoneNumber,
+
         ];
     }
 }

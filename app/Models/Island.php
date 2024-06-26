@@ -12,10 +12,9 @@ class Island extends Model
 
     protected $fillable = [
         'name',
-        'location',
         'area',
         'total_population',
-        'island_Image',
+        'islandImage',
     ];
 
     protected $dates = ['deleted_at'];

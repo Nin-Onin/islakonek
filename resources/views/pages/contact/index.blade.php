@@ -49,22 +49,14 @@
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                 Religion</th>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Civil Status</th>
-
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Date of Birth</th>
 
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                 Location</th>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Phone Number</th>
-                            <th class="px-6 py-3"></th>
-                            <th class="px-6 py-3"></th>
+                                Action</th>
+
                         </tr>
                     </thead>
                     <tbody id="contactsTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200">
@@ -80,25 +72,19 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                                     {{ $contact->religion }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                                    {{ $contact->civil_status }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                                    {{ $contact->date_of_birth }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                                     {{ $contact->location }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                                    {{ $contact->phone_number }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <a href="{{ route('contact.edit', ['contact' => $contact->id]) }}"
-                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <form method="post"
-                                        action="{{ route('contact.destroy', ['contact' => $contact]) }}">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit"
-                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-                                    </form>
+                                    <div class="flex flex-row justify-between">
+                                        <a href="{{ route('contact.edit', ['contact' => $contact->id]) }}"
+                                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                        <form method="post"
+                                            action="{{ route('contact.destroy', ['contact' => $contact]) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit"
+                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -117,16 +103,11 @@
                 let name = row.cells[0].innerText.toLowerCase();
                 let age = row.cells[1].innerText.toLowerCase();
                 let sex = row.cells[2].innerText.toLowerCase();
-                let religion = row.cells[4].innerText.toLowerCase();
-                let civil_status = row.cells[5].innerText.toLowerCase();
-                let date_of_birth = row.cells[6].innerText.toLowerCase();
-                let location = row.cells[7].innerText.toLowerCase();
-                let phoneNumber = row.cells[8].innerText.toLowerCase();
+                let religion = row.cells[3].innerText.toLowerCase();
+                let location = row.cells[4].innerText.toLowerCase();
 
                 if (name.includes(filter) || age.includes(filter) || sex.includes(filter) || religion
-                    .includes(filter) || civil_status
-                    .includes(filter) || date_of_birth.includes(filter) || location.includes(filter) ||
-                    phoneNumber.includes(filter)) {
+                    .includes(filter) || location.includes(filter)) {
                     row.style.display = '';
                 } else {
                     row.style.display = 'none';

@@ -17,10 +17,7 @@ return new class extends Migration
             $table->integer('age');
             $table->string('sex'); // Will be validated in the model
             $table->string('religion');
-            $table->string('civil_status'); // Will be validated in the model
-            $table->string('date_of_birth');
             $table->string('location');
-            $table->string('phone_number');
             $table->softDeletes();
             $table->timestamps();
         });

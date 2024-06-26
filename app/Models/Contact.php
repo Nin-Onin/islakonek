@@ -15,10 +15,8 @@ class Contact extends Model
         'age',
         'sex',
         'religion',
-        'civil_status',
-        'date_of_birth',
         'location',
-        'phone_number',
+
     ];
 
     protected $dates = ['deleted_at'];

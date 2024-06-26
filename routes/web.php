@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::resource('island', IslandController::class);
+    Route::resource('/island', IslandController::class);
 });
 
 
