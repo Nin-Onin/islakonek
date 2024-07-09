@@ -31,12 +31,16 @@
                 <div class="w-full">
                     <x-input-label for="sex" :value="__('Sex')" class="w-20" />
                     <select id="sex" name="sex" value="{{ $contact->sex }}"
-                        class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
-                        style="background-color: #111827; color: #ffffff;">
-                        <option value="" disabled {{ $contact->sex == '' ? 'selected' : '' }}>Enter Sex</option>
-                        <option value="male" {{ $contact->sex == 'male' ? 'selected' : '' }}>Male</option>
-                        <option value="female" {{ $contact->sex == 'female' ? 'selected' : '' }}>Female</option>
-                        <option value="other" {{ $contact->sex == 'other' ? 'selected' : '' }}>Other</option>
+                        class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg bg-whit" required
+                        autofocus>
+                        <option class= "text-blue" value="" disabled {{ $contact->sex == '' ? 'selected' : '' }}>
+                            Enter Sex</option>
+                        <option class= "text-blue" value="male" {{ $contact->sex == 'male' ? 'selected' : '' }}>Male
+                        </option>
+                        <option class= "text-blue" value="female" {{ $contact->sex == 'female' ? 'selected' : '' }}>
+                            Female</option>
+                        <option class= "text-blue" value="other" {{ $contact->sex == 'other' ? 'selected' : '' }}>Other
+                        </option>
                     </select>
 
                 </div>
@@ -50,12 +54,27 @@
             </div>
 
             <div class="w-full">
-                <x-input-label for="location" :value="__('Location')" />
-                <x-text-input id="location" name="location" type="text" value="{{ $contact->location }}"
-                    placeholder="Enter Location" class="mt-1 block w-full" required autofocus autocomplete="off" />
+                <x-input-label for="status" :value="__('Status')" class="w-20" />
+                <select id="status" name="status" value="{{ $contact->status }}"
+                    class="mt-1 block w-full border-1 bg-none border-gray-300 bg-white  rounded-lg" required autofocus>
+                    <option class= "text-blue" value="" disabled {{ $contact->status == '' ? 'selected' : '' }}>
+                        Enter Status
+                    </option>
+                    <option class= "text-blue" value="active" {{ $contact->status == 'active' ? 'selected' : '' }}>
+                        Active</option>
+                    <option class= "text-blue" value="not active"
+                        {{ $contact->status == 'not active' ? 'selected' : '' }}>Not Active
+                    </option>
+                </select>
+
             </div>
 
+        </div>
 
+        <div class="w-full">
+            <x-input-label for="location" :value="__('Location')" />
+            <x-text-input id="location" name="location" type="text" value="{{ $contact->location }}"
+                placeholder="Enter Location" class="mt-1 block w-full" required autofocus autocomplete="off" />
         </div>
 
 

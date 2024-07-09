@@ -19,6 +19,7 @@ class ContactFactory extends Factory
             'age' => $this->faker->numberBetween(18, 65),
             'sex' => $this->faker->word,
             'religion' => $this->faker->word,
+            'status' => $this->faker->word,
             'location' => $this->faker->address,
 
         ];

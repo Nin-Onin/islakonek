@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::simplePaginate(5);
         return view('pages.contact.index', compact('contacts'));
     }
 
@@ -35,6 +35,7 @@ class ContactController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'religion' => 'required',
+            'status' => 'required',
             'location' => 'required',
         ]);
 
@@ -59,6 +60,7 @@ class ContactController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'religion' => 'required',
+            'status' => 'required',
             'location' => 'required',
         ]);
 

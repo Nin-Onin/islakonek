@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        Contact::factory(3)->create();
-        Island::factory(5)->create();
+        Contact::factory(10)->create();
     }
 }

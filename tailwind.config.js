@@ -17,23 +17,23 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                dark: colors.gray,
-            }
+            // colors: {
+            //     dark: colors.gray,
+            // }
         },
     },
 
     plugins: [forms,
-        themeVariants({
-            themes: {
-                light: {
-                    mediaQuery: prefersLight /* "@media (prefers-color-scheme: light)" */,
-                },
-                dark: {
-                    mediaQuery: prefersDark /* "@media (prefers-color-scheme: dark)" */,
-                },
-            },
-        }),
+        // themeVariants({
+        //     themes: {
+        //         light: {
+        //             mediaQuery: prefersLight /* "@media (prefers-color-scheme: light)" */,
+        //         },
+        //         dark: {
+        //             mediaQuery: prefersDark /* "@media (prefers-color-scheme: dark)" */,
+        //         },
+        //     },
+        // }),
     ],
     darkMode: 'class',
 };

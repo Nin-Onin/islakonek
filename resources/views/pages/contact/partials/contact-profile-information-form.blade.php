@@ -32,11 +32,10 @@
                     <x-input-label for="sex" :value="__('Sex')" class="w-20" />
                     <select id="sex" name="sex"
                         class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
-                        style="background-color: #111827; color: #fffff;">
+                        style="color: #fffff;">
                         <option value="" disabled selected>Enter Sex</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-                        <option value="other">Other</option>
                     </select>
                 </div>
             </div>
@@ -48,13 +47,28 @@
                     class="mt-1 block w-full" required autofocus autocomplete="off" />
             </div>
 
+
             <div class="w-full">
-                <x-input-label for="location" :value="__('Location')" />
-                <x-text-input id="location" name="location" type="text" placeholder="Enter Location"
-                    class="mt-1 block w-full" required autofocus autocomplete="off" />
+                <x-input-label for="status" :value="__('Status')" class="w-20" />
+                <select id="status" name="status"
+                    class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
+                    style="color: #fffff;">
+                    <option value="" disabled selected>Enter Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Not Active</option>
+                </select>
             </div>
 
+
         </div>
+
+        <div class="w-full">
+            <x-input-label for="location" :value="__('Location')" />
+            <x-text-input id="location" name="location" type="text" placeholder="Enter Location"
+                class="mt-1 block w-full" required autofocus autocomplete="off" />
+        </div>
+
+
 
 
 

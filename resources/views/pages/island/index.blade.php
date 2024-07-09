@@ -12,7 +12,6 @@
             </x-bladewind::alert>
         @endif
     </div>
-
     <div class="w-full flex justify-center">
         <div class="w-full max-w-7xl flex flex-col items-center">
             <div class="flex flex-col w-full">
@@ -31,32 +30,32 @@
                     <x-bladewind::button uppercasing="false" class="w-52 ml-4">
                         <a href="{{ route('island.create') }}">Add Island</a>
                     </x-bladewind::button>
+
+                    {{--  use the paginate --}}
+
+
                 </div>
             </div>
             <div class="w-full overflow-x-scroll">
                 <table class="min-w-full divide-y divide-gray-200 mx-auto">
-                    <thead class="bg-gray-50 dark:bg-gray-700">
+                    <thead class="bg-sky-200">
                         <tr>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Name</th>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Area</th>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Total Population</th>
-
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                            <th class="px-6 py-3 text-left text-xs font-bold text-black uppercase tracking-wider">Name
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-black uppercase tracking-wider">Area
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-black uppercase tracking-wider">Total
+                                Population
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-black uppercase tracking-wider">
                                 Island Image</th>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                Action</th>
 
+                            <th
+                                class="flex justify-center px-6 py-3 text-left text-xs font-bold text-black uppercase tracking-wider">
+                                Action</th>
                         </tr>
                     </thead>
-                    <tbody id="islandTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200">
+                    <tbody id="islandsTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200">
                         @foreach ($islands as $island)
                             <tr>
                                 <td
@@ -68,20 +67,27 @@
                                     {{ $island->total_population }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                                     {{ $island->islandImage }}</td>
+
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex flex-row justify-between">
-                                        <a href="{{ route('island.edit', ['island' => $island->id]) }}"
-                                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
-                                        <div class="w-5">
+                                    <div class="flex flex-row justify-center gap-5">
+                                        <div class="">
+                                            <button
+                                                class="bg-green-500 hover:bg-green-700 text-white font-bold
+                                                rounded py-2 px-4 ">
+                                                <a href="{{ route('island.edit', ['island' => $island->id]) }}">Edit
+                                                </a>
+                                            </button>
 
                                         </div>
-                                        <form method="post"
-                                            action="{{ route('island.destroy', ['island' => $island]) }}">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit"
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-                                        </form>
+                                        <div class="">
+                                            <form method="post"
+                                                action="{{ route('island.destroy', ['island' => $island]) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit"
+                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -90,12 +96,14 @@
                 </table>
             </div>
         </div>
+
     </div>
+
 
     <script>
         document.getElementById('searchInput').addEventListener('input', function() {
             let filter = this.value.toLowerCase();
-            let rows = document.querySelectorAll('#islandTable tr');
+            let rows = document.querySelectorAll('#islandsTable tr');
 
             rows.forEach(row => {
                 let name = row.cells[0].innerText.toLowerCase();
@@ -103,8 +111,8 @@
                 let total_population = row.cells[2].innerText.toLowerCase();
                 let islandImage = row.cells[3].innerText.toLowerCase();
 
-                if (name.includes(filter) || area.includes(filter) ||
-                    total_population
+                if (name.includes(filter) || area.includes(filter) || total_population.includes(filter) ||
+                    islandImage
                     .includes(filter) || islandImage.includes(filter)) {
                     row.style.display = '';
                 } else {
