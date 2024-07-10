@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('photo')->nullable();
             $table->string('name');
             $table->integer('age');
             $table->string('sex'); // Will be validated in the model

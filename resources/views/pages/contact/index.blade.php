@@ -91,11 +91,9 @@
                             <tr>
                                 <td
                                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                                    <img class="object-cover w-10 h-10 rounded-full mr-4"
-                                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                                        alt="">
+                                    <img src="{{ $contact->photo }}" alt="Contact Photo"
+                                        class="h-10 w-10 rounded-full mr-4">
                                     <div>{{ $contact->name }}</div>
-                                    {{ $contact->name }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                                     {{ $contact->age }}</td>

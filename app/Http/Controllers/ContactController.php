@@ -31,6 +31,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'photo' => 'nullable',
             'name' => 'required',
             'age' => 'required',
             'sex' => 'required',
@@ -56,6 +57,7 @@ class ContactController extends Controller
     public function update(Contact $contact, Request $request)
     {
         $data = $request->validate([
+            'photo' => 'nullable',
             'name' => 'required',
             'age' => 'required',
             'sex' => 'required',
