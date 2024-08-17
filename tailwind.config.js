@@ -10,6 +10,8 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         "./vendor/mkocansey/bladewind/resources/views/**/*.blade.php",
+        "./node_modules/flowbite/**/*.js"
+
     ],
 
     theme: {
@@ -34,6 +36,8 @@ export default {
         //         },
         //     },
         // }),
+        require('flowbite/plugin')
+
     ],
     darkMode: 'class',
 };

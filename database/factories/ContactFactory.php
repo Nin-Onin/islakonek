@@ -15,10 +15,11 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
+            'photo' => $this->faker->imageUrl(640, 480, 'people', true, 'Faker'),
             'name' => $this->faker->name,
             'age' => $this->faker->numberBetween(18, 65),
             'sex' => $this->faker->word,
-            'religion' => $this->faker->word,
+            'phoneNumber' => $this->faker->phoneNumber(),
             'status' => $this->faker->word,
             'location' => $this->faker->address,
 

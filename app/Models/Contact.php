@@ -15,7 +15,7 @@ class Contact extends Model
         'name',
         'age',
         'sex',
-        'religion',
+        'phoneNumber',
         'status',
         'location',
 

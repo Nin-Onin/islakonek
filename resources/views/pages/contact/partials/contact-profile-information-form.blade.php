@@ -22,15 +22,16 @@
         </div>
 
         <div class="flex justify-center">
-            <div class="bg-sky-200 rounded-[30px] py-2 px-4 inline-flex items-center">
-                <span class="text-black mr-2">
-                    Upload a photo
-                </span>
-                <span class="material-symbols-outlined text-black">
-                    add_a_photo
-                </span>
-            </div>
+            <button class="bg-sky-200 rounded-[30px] py-2 px-4 inline-flex items-center focus:outline-none"
+                onclick="document.getElementById('avatar').click()">
+                <span class="text-black mr-2">Upload a photo</span>
+                <span class="material-symbols-outlined text-black">add_a_photo</span>
+            </button>
         </div>
+
+        <x-input-label for="avatar" :value="__('')" />
+        <x-text-input id="avatar" type="file" name="avatar" class="mt-1 hidden w-full " />
+
 
 
         {{-- <div>
@@ -53,37 +54,43 @@
 
                 <div class="w-full">
                     <x-input-label for="sex" :value="__('Sex')" class="w-20" />
-                    <select id="sex" name="sex"
-                        class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
-                        style="color: #fffff;">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
-                        <option value="" disabled selected>Enter Sex</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <div class="relative">
+                        <select id="sex" name="sex"
+                            class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg appearance-none"
+                            required autofocus style="color: #000000; padding-right: 2rem;">
+                            <option value="" disabled selected>Enter Sex</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+
+                    </div>
                 </div>
+
+
             </div>
         </div>
         <div class="flex flex-row">
             <div class="w-full">
-                <x-input-label for="religion" :value="__('Religion')" />
-                <x-text-input id="religion" name="religion" type="text" placeholder="Enter Religion"
+                <x-input-label for="phoneNumber" :value="__('Phone Number')" />
+                <x-text-input id="phoneNumber" name="phoneNumber" type="text" placeholder="Enter Phone Number"
                     class="mt-1 block w-full" required autofocus autocomplete="off" />
             </div>
 
 
             <div class="w-full">
                 <x-input-label for="status" :value="__('Status')" class="w-20" />
-                <select id="status" name="status"
-                    class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg" required autofocus
-                    style="color: #fffff;">
-                    <option value="" disabled selected>Enter Status</option>
-                    <option value="active">Active</option>
-                    <option value="inactive">Not Active</option>
-                </select>
+                <div class="relative">
+                    <select id="status" name="status"
+                        class="mt-1 block w-full border-1 bg-none border-gray-300 rounded-lg appearance-none" required
+                        autofocus style="color: #000000; padding-right: 2rem;">
+                        <option value="" disabled selected>Enter Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Not Active</option>
+                    </select>
+
+                </div>
             </div>
+
 
 
         </div>
@@ -94,14 +101,7 @@
                 class="mt-1 block w-full pl-12 pr-10 flag-input" required autofocus autocomplete="off" />
         </div>
 
-        <style>
-            .flag-input {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/800px-Flag_of_the_Philippines.svg.png?20230921003513');
-                background-repeat: no-repeat;
-                background-size: 24px 15px;
-                background-position: 8px center;
-            }
-        </style>
+
 
 
 
@@ -123,3 +123,12 @@
 
     </form>
 </section>
+
+<style>
+    .flag-input {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/800px-Flag_of_the_Philippines.svg.png?20230921003513');
+        background-repeat: no-repeat;
+        background-size: 24px 15px;
+        background-position: 8px center;
+    }
+</style>

@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::simplePaginate(5);
+        $contacts = Contact::simplePaginate(20);
         return view('pages.contact.index', compact('contacts'));
     }
 
@@ -35,7 +35,7 @@ class ContactController extends Controller
             'name' => 'required',
             'age' => 'required',
             'sex' => 'required',
-            'religion' => 'required',
+            'phoneNumber' => 'required',
             'status' => 'required',
             'location' => 'required',
         ]);
@@ -61,14 +61,14 @@ class ContactController extends Controller
             'name' => 'required',
             'age' => 'required',
             'sex' => 'required',
-            'religion' => 'required',
+            'phoneNumber' => 'nullable',
             'status' => 'required',
             'location' => 'required',
         ]);
 
         $contact->update($data);
 
-        return redirect(route('contact.index'))->with('success', 'Contact Updated Succesffully');
+        return redirect(route('contact.index'));
     }
 
     /**
@@ -77,6 +77,6 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        return redirect(route('contact.index'))->with('success', 'Contact deleted Succesffully');
+        return redirect(route('contact.index'));
     }
 }

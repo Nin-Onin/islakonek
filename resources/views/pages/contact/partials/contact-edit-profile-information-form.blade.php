@@ -48,9 +48,9 @@
         </div>
         <div class="flex flex-row">
             <div class="w-full">
-                <x-input-label for="religion" :value="__('Religion')" />
-                <x-text-input id="religion" name="religion" type="text" value="{{ $contact->religion }}"
-                    placeholder="Enter Religion" class="mt-1 block w-full" required autofocus autocomplete="off" />
+                <x-input-label for="phoneNumber" :value="__('Phone Number')" />
+                <x-text-input id="phoneNumber" name="phoneNumber" type="text" value="{{ $contact->phoneNumber }}"
+                    placeholder="Enter Phone Number" class="mt-1 block w-full" required autofocus autocomplete="off" />
             </div>
 
             <div class="w-full">
